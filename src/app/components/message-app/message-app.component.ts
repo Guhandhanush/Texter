@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 interface Message {
   id:number;
-  sender: string;
   content: string;
   timestamp: Date;
 }
@@ -17,13 +16,12 @@ export class MessageAppComponent {
   messages: Message[] = [];
   newMessage: Message = {
     id:0,
-    sender: '',
     content: '',
     timestamp: new Date()
   };
 
   sendMessage() {
-    if (this.newMessage.sender.trim() !== '' && this.newMessage.content.trim() !== '') {
+    if (this.newMessage.content.trim() !== '') {
       this.messages.push({...this.newMessage});
       this.newMessage.content = '';
     }
