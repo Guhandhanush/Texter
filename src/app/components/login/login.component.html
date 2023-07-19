@@ -1,16 +1,32 @@
 <div class="col-md-5 container mt-4 p-4 border1">
   <h4 style="text-align: center">Log In</h4>
-  <form>
+  <form [formGroup]="loginForm">
     <div class="mb-3">
       <label class="form-label">Email</label>
       <input class="form-control" type="text" formControlName="loginEmail"/>
+      <div *ngIf="loginForm.controls.loginEmail.touched && loginForm.controls.loginEmail.invalid">
+        <div *ngIf="loginForm.controls.loginEmail.errors?.['required']">
+          <span style="color: red;">This field is required!</span>
+        </div>
+        <div *ngIf="loginForm.controls.loginEmail.errors?.['email']">
+          <span style="color: red;">Invalid Email</span>
+        </div>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Password</label>
       <input class="form-control" type="text" formControlName="loginPassword"/>
+      <div *ngIf="loginForm.controls.loginPassword.touched && loginForm.controls.loginPassword.invalid">
+        <div *ngIf="loginForm.controls.loginPassword.errors?.['required']">
+          <span style="color:red;">This Field is required!</span>
+        </div>
+        <div *ngIf="loginForm.controls.loginPassword.errors?.['minlength']">
+          <span style="color:red;">Password Should not be less than 8 characters.</span>
+        </div>
+      </div>
     </div>
     <div class="mb-3">
-      <button class="btn btn-dark">Log In</button>
+      <button class="btn btn-dark" (click)="loginFun()">Log In</button>
     </div>
   </form>
 </div>

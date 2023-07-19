@@ -4,38 +4,48 @@
     <div class="mb-3">
       <label class="form-label">Name</label>
       <input class="form-control" type="text" name="registerName" formControlName="registerName" />
-      <div *ngIf="(registerForm.controls['registerName'].invalid &&
-            registerForm.controls['registerName'].touched)
-        ">
-        <div *ngIf="registerForm.controls['registerName'].errors?.['required']">
+      <div *ngIf="(registerForm.controls.registerName.invalid && registerForm.controls.registerName.touched)">
+        <div *ngIf="registerForm.controls.registerName.errors?.['required']">
           <span style="color: red">This field is required</span>
+        </div>
+        <div *ngIf="registerForm.controls.registerName.errors?.['pattern']">
+          <span style="color: red">Invalid</span>
         </div>
       </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Email</label>
       <input class="form-control" type="text" name="registerEmail" formControlName="registerEmail" />
-      <div *ngIf="registerForm.controls['registerEmail'].invalid && registerForm.controls['registerEmail'].touched">
-        <div *ngIf="registerForm.controls['registerEmail'].errors?.['required']">
+      <div *ngIf="registerForm.controls.registerEmail.touched && registerForm.controls.registerEmail.invalid">
+        <div *ngIf="registerForm.controls.registerEmail.errors?.['required']">
           <span style="color: red">This field is required</span>
+        </div>
+        <div *ngIf="registerForm.controls.registerEmail.errors?.['email']">
+          <span style="color:red;">Invalid Email</span>
         </div>
       </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Mobile</label>
       <input class="form-control" type="text" name="registerMobile" formControlName="registerMobile" />
-      <div *ngIf="registerForm.controls['registerMobile'].invalid && registerForm.controls['registerMobile'].touched">
-        <div *ngIf="registerForm.controls['registerMobile'].errors?.['required']">
+      <div *ngIf="registerForm.controls.registerMobile.touched && registerForm.controls.registerMobile.invalid">
+        <div *ngIf="registerForm.controls.registerMobile.errors?.['required']">
           <span style="color: red">This field is required</span>
+        </div>
+        <div *ngIf="registerForm.controls.registerMobile.errors?.['pattern']">
+          <span style="color:red;">Invalid Mobile number</span>
         </div>
       </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Password</label>
       <input class="form-control" type="text" name="registerPassword" formControlName="registerPassword" />
-      <div *ngIf="registerForm.controls['registerPassword'].invalid && registerForm.controls['registerPassword'].touched">
-        <div *ngIf="registerForm.controls['registerPassword'].errors?.['required']">
+      <div *ngIf="registerForm.controls.registerPassword.touched && registerForm.controls.registerPassword.invalid">
+        <div *ngIf="registerForm.controls.registerPassword.errors?.['required']">
           <span style="color: red">This field is required</span>
+        </div>
+        <div *ngIf="registerForm.controls.registerPassword.errors?.['minlength']">
+          <span style="color:red;">Password too short</span>
         </div>
       </div>
     </div>
