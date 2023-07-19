@@ -1,0 +1,24 @@
+<div class="col-md-5 container mt-4 p-4 border1">
+  <h4 style="text-align: center">Register   </h4>
+  <form [formGroup]="registerForm">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input class="form-control" type="text" name="registerName" formControlName="registerName"/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input class="form-control" type="text" name="registerEmail" formControlName="registerEmail"/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Mobile</label>
+      <input class="form-control" type="text" name="registerMobile" formControlName="registerMobile"/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input class="form-control" type="text" name="registerPassword" formControlName="registerPassword"/>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-custom" (click)="registered()">Submit</button>
+    </div>
+  </form>
+</div>

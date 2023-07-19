@@ -1,0 +1,40 @@
+<div class="container mt-3 border" style="min-height: 90vh">
+  <div class="row border" style="min-height: 90vh">
+    <div class="col-md-2 border" style="min-height: 90vh"></div>
+    <div class="col-md-10 border" style="min-height: 90vh">
+      <div>
+        <h3>Texter</h3>
+        <div *ngFor="let msg of messages">
+          <b>{{ msg.sender }}:</b> {{ msg.content }} ({{
+            msg.timestamp | date : "short"
+          }})
+          <button (click)="deleteMessage(msg.id)">Delete</button>
+        </div>
+        <br />
+        <div class="row form-group">
+          <div class="col-md-3">
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="newMessage.sender"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="newMessage.content"
+              placeholder="Type your message..."
+            />
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-success" (click)="sendMessage()">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
