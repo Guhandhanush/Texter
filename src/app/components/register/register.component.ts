@@ -20,12 +20,9 @@ export class RegisterComponent {
   registered() {
     if(this.registerForm.valid){
       this.notify.showSuccess('Usere Registered Successfully','Registration Success!');
-      
     }
     else{
       this.notify.showError('Unable to Register ','Registration Failed!')
     }
-
-
   }
 }
