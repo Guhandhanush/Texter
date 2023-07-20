@@ -2,4 +2,30 @@
 {
   position: fixed;
   bottom: 10px;
+  display: flex;
+}
+
+.border2{
+  background-color: #27374d;
+  color: white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.border1{
+  background-color: #27374d;
+  color: white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.msg{
+  background-color: white;
+  color: #27374d;
+  padding: 1%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+  rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
 }

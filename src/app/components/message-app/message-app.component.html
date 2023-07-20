@@ -1,14 +1,12 @@
 <div class="container mt-3 border" style="min-height: 90vh">
   <div class="row border" style="min-height: 90vh">
-    <div class="col-md-2 border" style="min-height: 90vh"></div>
-    <div class="col-md-10 border" style="min-height: 90vh">
+    <div class="col-md-2 border1" style="min-height: 90vh"></div>
+    <div class="col-md-10 border2" style="min-height: 90vh">
       <div>
-        <h3>Texter</h3>
-        <div *ngFor="let msg of messages">
-          {{ msg.content }} ({{
-            msg.timestamp | date : "short"
-          }})
-          <button (click)="deleteMessage(msg.id)">Delete</button>
+        <h3 class="mt-2">Texter</h3>
+        <div class="col-md-4 container mt-2 msg" *ngFor="let msg of messages">
+          {{ msg.content }} 
+          <button class="btn btn-dark" (click)="deleteMessage(msg.id)">Delete</button>
         </div>
         <br />
         <div class="row form-group">
@@ -20,7 +18,7 @@
               placeholder="Type your message..."
             />
           </div>
-          <div class="col-md-1 border">
+          <div class="col-md-1 mb-3">
             <button class="btn btn-success" (click)="sendMessage()">
               Send
             </button>
