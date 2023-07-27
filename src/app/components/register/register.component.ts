@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { NotifyService } from 'src/app/services/notify.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { NotifyService } from 'src/app/services/notify.service';
 })
 export class RegisterComponent {
 
-  constructor(private notify: NotifyService, private routing: Router) { }
+  constructor(private notify: NotifyService, private routing: Router,
+    private auth: AuthService) { }
 
   registerForm = new FormGroup({
     registerName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
@@ -22,11 +24,13 @@ export class RegisterComponent {
 
   registered() {
     if (this.registerForm.valid) {
-      this.notify.showSuccess('Usere Registered Successfully', 'Registration Success!');
-      this.routing.navigateByUrl('/login')
+      this.auth.postUsers(this.registerForm.value).subscribe(res => {
+        this.notify.showSuccess('Usere Registered Successfully', 'Registration Success!');
+        this.routing.navigateByUrl('/login')
+      })
     }
     else {
-      this.notify.showError('Unable to Register ', 'Registration Failed!')
+      this.notify.showError('Unable to Register, Please enter valid data', 'Registration Failed!')
     }
   }
 }

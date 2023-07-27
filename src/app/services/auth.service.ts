@@ -6,23 +6,23 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  URL!: 'http://localhost:3000/user';
+
 
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get(this.URL);
+    return this.http.get('http://localhost:3000/user');
   }
 
-  postUsers(userDate: any) {
-    return this.http.post(this.URL, userDate)
+  postUsers(userData: any) {
+    return this.http.post('http://localhost:3000/user', userData)
   }
 
   getUserById(id: any) {
-    return this.http.get(this.URL + '/' + id)
+    return this.http.get(`http://localhost:3000/user?registerEmail=${id}`)
   }
 
-  updateUser(id: any, inputDate: any) {
-    return this.http.put(this.URL + '/' + id, inputDate)
+  updateUser(id: any, inputData: any) {
+    return this.http.put(`http://localhost:3000/user/${id}`, inputData)
   }
 }

@@ -1,7 +1,23 @@
 {
   "user": [
     {
-      
+      "id": 1
+    },
+    {
+      "registerName": "Guhan",
+      "registerEmail": "guhan@gmail.com",
+      "registerMobile": "8765467543",
+      "registerPassword": "erenyeager",
+      "role": true,
+      "id": 2
+    },
+    {
+      "registerName": "lee",
+      "registerEmail": "lee@gmail.com",
+      "registerMobile": "1234567890",
+      "registerPassword": "donglee123",
+      "role": true,
+      "id": 3
     }
   ]
 }
