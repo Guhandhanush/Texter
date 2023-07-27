@@ -29,7 +29,7 @@
   </div>
 </div>
  -->
-<section style="background-color: #eee">
+<section class="bg-dark " style="height: 93vh;">
   <div class="container py-5">
     <div class="row">
       <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
@@ -38,7 +38,7 @@
         <div class="card">
           <div class="card-body">
             <ul class="list-unstyled mb-0">
-              <li class="p-2 border-bottom" style="background-color: #eee">
+              <li class="p-2 border-bottom">
                 <a href="#!" class="d-flex justify-content-between">
                   <div class="d-flex flex-row">
                     <img
@@ -229,25 +229,34 @@
               width="60"
             />
           </li>
-          <div class="container" style="">
-            <li class="bg-white mb-3">
-              <div class="form-outline">
-                <textarea
-                  class="form-control"
-                  id="textAreaExample2"
-                  rows="4"
+          <div class="container textBox">
+            <form id="formsubmit" enctype="multipart/form-data">
+              <div
+                class="card-footer text-muted d-flex justify-content-start align-items-center p-3"
+              >
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
+                  alt="avatar 3"
+                  style="width: 40px; height: 100%"
+                />
+                <a class="ms-3 text-muted" href="#!"
+                  ><i class="fas fa-paperclip"></i
+                ></a>
+                <a class="ms-3 text-muted" href="#!"
+                  ><i class="fas fa-smile"></i
+                ></a>
+                <input
+                  type="text"
                   [(ngModel)]="newMessage.content"
-                ></textarea>
-                <label class="form-label" for="textAreaExample2">Message</label>
+                  class="form-control form-control-md mx-3"
+                  id="messagebox"
+                  placeholder="Type message"
+                />
+                <button class="ms-1 btn" type="submit" (click)="sendMessage()">
+                  <i class="fas fa-paper-plane w-100 h-100"></i>
+                </button>
               </div>
-            </li>
-            <button
-              type="button"
-              class="btn btn-info btn-rounded float-end"
-              (click)="sendMessage()"
-            >
-              Send
-            </button>
+            </form>
           </div>
         </ul>
       </div>

@@ -1,10 +1,9 @@
-
-.msg{
+.msg {
   background-color: white;
   color: #27374d;
   padding: 1%;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
-  rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
@@ -12,19 +11,27 @@
 
 #chat3 .form-control {
   border-color: transparent;
-  }
+}
 
-  #chat3 .form-control:focus {
+#chat3 .form-control:focus {
   border-color: transparent;
   box-shadow: inset 0px 0px 0px 1px transparent;
-  }
+}
 
-  .badge-dot {
+.badge-dot {
   border-radius: 50%;
   height: 10px;
   width: 10px;
   margin-left: 2.9rem;
-  margin-top: -.75rem;
-  }
+  margin-top: -0.75rem;
+}
 
+.textBox {
+  position: fixed;
+  bottom: 0px;
+  width: 800px;
+}
 
+a{
+  text-decoration: none;
+}
