@@ -1,7 +1,12 @@
 {
   "user": [
     {
-      "id": 1
+      "id": 1,
+      "registerName": "Eren",
+      "registerEmail": "eren@gmail.com",
+      "registerMobile": "8765467543",
+      "registerPassword": "erenyeager",
+      "role": true
     },
     {
       "registerName": "Guhan",

@@ -24,10 +24,11 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.auth.getUserById(this.loginForm.value.loginEmail).subscribe(res => {
         this.userData = res;
-        console.log(this.userData.registerPassword);
+        let pass = this.userData[0]["registerPassword"];
         console.log(this.loginForm.value.loginPassword)
-        if(this.userData.registerPassword === this.loginForm.value.loginPassword){
-
+        if(pass === this.loginForm.value.loginPassword){
+          this.notify.showSuccess('User Logged in successfully !', 'Login Success!')
+          this.routing.navigateByUrl('/message')
         }
         else{
           this.notify.showError('User not Registered', 'Login Failed!')

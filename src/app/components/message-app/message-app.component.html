@@ -229,30 +229,26 @@
               width="60"
             />
           </li>
-
-          <li class="bg-white mb-3">
-            <div class="form-outline">
-              <textarea
-                class="form-control"
-                id="textAreaExample2"
-                rows="4"
-                [(ngModel)]="newMessage.content"
-              ></textarea>
-              <label
-                class="form-label"
-                for="textAreaExample2"
-                >Message</label
-              >
-            </div>
-          </li>
-          <button
-            type="button"
-            class="btn btn-info btn-rounded float-end"
-            (click)="sendMessage()"
-            
-          >
-            Send
-          </button>
+          <div class="container" style="">
+            <li class="bg-white mb-3">
+              <div class="form-outline">
+                <textarea
+                  class="form-control"
+                  id="textAreaExample2"
+                  rows="4"
+                  [(ngModel)]="newMessage.content"
+                ></textarea>
+                <label class="form-label" for="textAreaExample2">Message</label>
+              </div>
+            </li>
+            <button
+              type="button"
+              class="btn btn-info btn-rounded float-end"
+              (click)="sendMessage()"
+            >
+              Send
+            </button>
+          </div>
         </ul>
       </div>
     </div>
